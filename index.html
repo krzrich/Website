@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katherine Richard</title>
+<meta name="description" content="Katherine Richard — applied microeconomist studying the U.S. social safety net. Assistant Professor of Poverty and Public Policy, La Follette School of Public Affairs, University of Wisconsin–Madison.">
+<meta property="og:title" content="Katherine Richard">
+<meta property="og:description" content="Applied microeconomist studying the U.S. social safety net.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:      #16191d;
+    --paper:    #f7f7f4;
+    --card:     #fdfdfb;
+    --muted:    #6b6f76;
+    --rule:     #dcdbd4;
+    --accent:   #a02128;
+    --display:  "Fraunces", Georgia, serif;
+    --body:     "Source Serif 4", Georgia, serif;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; scroll-padding-top: 2rem; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation: none !important; transition: none !important; }
+  }
+
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--accent); }
+  a:hover{ background: rgba(160,33,40,.07); }
+  a:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 4rem 1.75rem 6rem;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 4.5rem;
+    align-items: start;
+  }
+
+  /* ---------- left rail ---------- */
+  .rail{ position: sticky; top: 3rem; }
+
+  .headshot{
+    display: block;
+    width: 100%;
+    max-width: 210px;
+    aspect-ratio: 4 / 5;      /* portrait crop; use 1/1 for square */
+    object-fit: cover;
+    object-position: 50% 30%; /* nudge up so the face isn't centered low */
+    margin: 0 0 1.5rem;
+    border-radius: 2px;
+    background: #e8e7e1;      /* shows if the image is missing */
+  }
+
+  .name{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 2.15rem;
+    line-height: 1.05;
+    letter-spacing: -.015em;
+    margin: 0 0 .85rem;
+  }
+
+  .role{
+    font-size: .95rem;
+    line-height: 1.45;
+    color: var(--muted);
+    margin: 0 0 1.4rem;
+  }
+  .role strong{ color: var(--ink); font-weight: 600; }
+
+  .contact{ font-size: .92rem; line-height: 1.9; }
+  .contact a{ border-bottom-color: var(--rule); }
+  .contact a:hover{ border-bottom-color: var(--accent); }
+
+  nav{ margin-top: 2rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
+  nav a{
+    display: block;
+    font-size: .92rem;
+    font-style: italic;
+    color: var(--muted);
+    border: 0;
+    padding: .22rem 0;
+  }
+  nav a:hover{ color: var(--accent); background: none; }
+
+  /* ---------- main ---------- */
+  main{ max-width: 46rem; }
+
+  .intro p{ margin: 0 0 1.1rem; }
+  .intro p:first-child{ font-size: 1.12rem; }
+
+  h2{
+    font-family: var(--body);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.28rem;
+    letter-spacing: 0;
+    color: var(--accent);
+    margin: 3.75rem 0 1.4rem;
+    padding-bottom: .45rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .entry{ margin: 0 0 1.9rem; }
+
+  .meta{
+    font-size: .9rem;
+    font-style: italic;
+    color: var(--muted);
+    display: block;
+    margin-bottom: .18rem;
+  }
+  .meta .flag{ color: var(--accent); }
+
+  .title{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.16rem;
+    line-height: 1.32;
+    margin: 0 0 .2rem;
+  }
+
+  .authors{ font-size: .95rem; color: var(--muted); margin: 0; }
+
+  /* expandable abstracts */
+  details{ margin-top: .45rem; }
+  details > summary{
+    font-size: .9rem;
+    font-style: italic;
+    color: var(--muted);
+    cursor: pointer;
+    list-style: none;
+    display: inline-block;
+    padding: .15rem 0;
+  }
+  details > summary::-webkit-details-marker{ display: none; }
+  details > summary::before{ content: "+ "; color: var(--accent); }
+  details[open] > summary::before{ content: "– "; }
+  details > summary:hover{ color: var(--ink); }
+  details > summary:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .abstract{
+    margin: .6rem 0 0;
+    padding: 0 0 .15rem 1.1rem;
+    border-left: 2px solid var(--accent);
+    font-size: .95rem;
+    line-height: 1.62;
+    color: #33373d;
+    background: var(--card);
+  }
+
+  footer{
+    margin-top: 4.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-size: .88rem;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 860px){
+    .wrap{ grid-template-columns: 1fr; gap: 2.5rem; padding: 2.5rem 1.25rem 4rem; }
+    .rail{ position: static; }
+    .headshot{ max-width: 130px; margin-bottom: 1.1rem; }
+    nav{ display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+    main{ max-width: none; }
+    h2{ margin-top: 2.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="rail">
+    <img class="headshot" src="headshot.jpg" alt="Katherine Richard">
+    <h1 class="name">Katherine<br>Richard</h1>
+    <p class="role">
+      <strong>Assistant Professor of Poverty and Public Policy</strong><br>
+      La Follette School of Public Affairs<br>
+      University of Wisconsin–Madison
+    </p>
+    <div class="contact">
+      <a href="mailto:katherine.richard@wisc.edu">katherine.richard@wisc.edu</a><br>
+      <a href="richard_cv_academic.pdf">Curriculum vitae →</a><br>
+      <a href="https://scholar.google.com/">Google Scholar →</a>
+    </div>
+    <nav aria-label="Sections">
+      <a href="#working-papers">Working papers</a>
+      <a href="#publications">Publications</a>
+      <a href="#in-progress">In progress</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#other-writing">Other writing</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p>I am an applied microeconomist studying the U.S. social safety net. My work combines quasi-experimental and experimental methods with large administrative datasets to understand how low-income families interact with assistance programs and the labor market.</p>
+      <p>Before joining La Follette, I was a Postdoctoral Associate at Georgetown's Better Government Lab and a Visiting Scholar at the Opportunity &amp; Inclusive Growth Institute at the Federal Reserve Bank of Minneapolis. I completed my Ph.D. in Economics and Public Policy at the University of Michigan in 2025.</p>
+      <p>I am an affiliated researcher at the Wilson Sheehan Lab for Economic Opportunities (LEO) at the University of Notre Dame and at Georgetown's McCourt School of Public Policy.</p>
+      <p>My research has been supported by the Michigan Department of Economics, the Gerald R. Ford School of Public Policy, the National Science Foundation (GRFP), and the Horowitz Foundation for Social Policy.</p>
+    </section>
+
+    <h2 id="working-papers">Working papers</h2>
+
+    <article class="entry">
+      <p class="title"><a href="Richard_Bart_PenaltiesSafetyNet.pdf">Penalties in the Safety Net: Economic Consequences of Work Requirement Enforcement</a></p>
+      <p class="authors">with Lea Bart</p>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">U.S. cash assistance promotes self-sufficiency through employment but imposes penalties that reduce or remove benefit income when participants violate work requirements. This paper quantifies the downstream consequences of not meeting work requirements using novel administrative data covering the full caseload of Michigan's Temporary Assistance for Needy Families (TANF) program, combined with monthly enrollment records in the Supplemental Nutrition Assistance Program (SNAP) and Medicaid, as well as quarterly Unemployment Insurance earnings records. We study a policy reform that increased the length of time that families were removed from TANF after violating work requirements to estimate causal responses of long-term safety net attachment and labor supply. We find that penalties result in persistent enrollment declines in SNAP and Medicaid for all household members, even those still eligible for programs. Moreover, when penalties are made more severe, far fewer families re-attach to TANF and formal employment declines due to a decreasing rate of job entry. On net, labor supply responses do not offset lost benefit income, and harsher penalties reduce cumulative financial resources by an additional 73 percent over the subsequent two years. Our findings indicate that sanctions reduce broader safety net attachment and increase economic instability for vulnerable families over the long term.</p>
+      </details>
+    </article>
+
+    <article class="entry">
+      <span class="meta">Draft available on request</span>
+      <p class="title">Intra-month Spending of the Least Liquid: Effects of SNAP and TANF Issuance Frequency</p>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Families spend Supplemental Nutrition Assistance Program (SNAP) benefits rapidly upon receipt, which has been causally linked to increased food insecurity, hardship avoidance, as well as adverse health, crime and education outcomes. However, many program beneficiaries rely on multiple sources of benefit income, including Temporary Assistance for Needy Families (TANF) benefits. This paper uses administrative data of SNAP and TANF spending covering over 40,000 program participants living across five U.S. states to study how multiple benefit issuance frequency shapes intra-month spending. Because SNAP and TANF issuance dates are randomly assigned, otherwise similar beneficiaries receive their benefits within a few days of one another, or as much as two weeks apart. I find that staggering benefit issuance by two weeks, relative to issuing benefits all at once, decreases benefit spending and increases the amount of benefits remaining at the end of the benefit month. Findings demonstrate that staggering transfers for very low-income families can help smooth benefit spending and increase resource access.</p>
+      </details>
+    </article>
+
+    <article class="entry">
+      <span class="meta">Draft available on request</span>
+      <p class="title">Back-End Processes as Low-Hanging Fruit: Effects of Simplifying Medicaid Income Verification Logic</p>
+      <p class="authors">with Jeremy Barofsky, Eric Giannella, Donald Moynihan, and Sebastian Jilke</p>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">The U.S. safety net is heavily means-tested, requiring eligible users to navigate significant administrative hurdles to prove financial eligibility and receive public benefits. State governments can use existing data sources to verify eligibility and reduce burden for caseworkers and program participants, relying instead on back-end processes to match and verify income. Evidence is however limited on the circumstances under which states can effectively implement these processes to improve program access. In this paper, we use administrative data underlying a U.S. state's automated income verification process in Medicaid to evaluate how simplifying this back-end process affected timely enrollment. We estimate the causal effect of rapidly-introduced changes to Medicaid's income verification logic with a regression discontinuity in time design. We find that simplifying verification logic significantly increases the proportion of applicants enrolling during the same month of application, especially among those reporting little to no income. These findings have important implications for states' designing similar back-end verification processes used to assess expanding safety net work requirements.</p>
+      </details>
+    </article>
+
+    <h2 id="publications">Publications</h2>
+
+    <article class="entry">
+      <span class="meta">AEA Papers and Proceedings, 2026, 116: 314–319</span>
+      <p class="title"><a href="https://www.aeaweb.org/articles?id=10.1257/pandp.20261087">Who Participates in TANF? Variation by Exposure to Work Requirements</a></p>
+      <p class="authors">with Lea Bart</p>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Since its enactment in 1996, participation in the Temporary Assistance for Needy Families (TANF) program has steadily declined. This paper uses administrative records covering the universe of Michigan TANF participants between 2010 and 2018 to characterize how the TANF caseload changed over this period, which spanned policy reforms that reduced time limits and increased penalties for violating work requirements. We identify important compositional differences between participants that are subject to work requirements relative to those who are not, and between participants who comply with work requirements relative to those that violate them.</p>
+      </details>
+    </article>
+
+    <article class="entry">
+      <span class="meta">American Economic Journal: Economic Policy, 2023, 15(3)</span>
+      <p class="title"><a href="https://www.aeaweb.org/articles?id=10.1257/pol.20200590">Spending Responses to High-Frequency Shifts in Payment Timing: Evidence from the Earned Income Tax Credit</a></p>
+      <p class="authors">with Aditya Aladangady, Shifrah Aron-Dine, David Cashin, Wendy Dunn, Laura Feiveson, Paul Lengermann, and Claudia Sahm</p>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">This study explores how shifts in the timing of large lump-sum payments to households affect spending. Using a novel data set combining daily, state-level measures of retail sales with IRS administrative data on tax refund issuance, we exploit plausibly exogenous, high-frequency variation across states in the timing of tax refunds to households claiming the Earned Income Tax Credit, particularly variation resulting from the 2017 PATH Act. Retail spending increases by 27 cents per refund dollar, implying an extra $1,150 of spending associated with the average refund within just two weeks of issuance. Results show non-durable and services expenditures increase along with durables, suggesting a considerable consumption response to the two-week shift in the timing of a large, predictable payment. Our results, which provide a lower bound on spending out of lump-sum payments, are informative for the efficacy of lump-sum transfers, including stimulus payments made during the recent recession.</p>
+      </details>
+    </article>
+
+    <article class="entry">
+      <span class="meta">Journal of Policy Analysis and Management, 2023, 42(3)</span>
+      <p class="title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/pam.22464">The COVID Cash Transfer Study: The Impacts of a One-Time Unconditional Cash Transfer on the Wellbeing of Families Receiving SNAP in Twelve States</a></p>
+      <p class="authors">with Natasha Pilkauskas, Brian Jacob, Elizabeth Rhodes, and H. Luke Shaefer</p>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">There is growing interest in the use of unconditional cash transfers as a means to alleviate poverty, yet little is known about the effects of such transfers in the U.S. This paper reports on the results of a randomized controlled study of a one-time $1,000 unconditional cash transfer in May 2020 to low-income families in twelve states in the U.S. Families were receiving, or had recently received, Supplemental Nutrition Assistance Program benefits. We examine the impact of the cash transfer on five pre-registered outcomes (hardship, mental health, parenting, child behavior, partner relationships) and several secondary outcomes (hardship avoidance, consumption, employment, benefit use). We find no statistically significant effects (powered to detect effects of 0.09 standard deviations) of the cash transfer on any outcomes for the full sample. In pre-specified exploratory analyses, we find significant reductions in material hardship (-0.17 standard deviations) among families with less than $500 of earnings in the previous month, roughly the bottom 50 percent of monthly earnings for the study sample.</p>
+      </details>
+    </article>
+
+    <article class="entry">
+      <span class="meta">National Tax Journal, 2022, 75(3)</span>
+      <p class="title"><a href="https://www.journals.uchicago.edu/doi/10.1086/720723">The COVID-19 Cash Transfer Study II: The Hardship and Mental Health Impacts of an Unconditional Cash Transfer to Low-Income Individuals</a></p>
+      <p class="authors">with Brian Jacob, Natasha Pilkauskas, Elizabeth Rhodes, and H. Luke Shaefer</p>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">This paper reports findings from a randomized controlled trial of a one-time, $1,000 unconditional cash transfer to low-income households in October 2020. We use a combination of administrative and survey data collected six weeks posttreatment to examine four preregistered hypotheses: impacts on material hardship and mental health in the full study sample as well as among a very low-income sample. We find no effects of the cash transfer on any of the prespecified or other exploratory outcomes. We explore various explanations for these null results and discuss implications for future research on unconditional cash transfer programs.</p>
+      </details>
+    </article>
+
+    <h2 id="in-progress">Works in progress</h2>
+
+    <article class="entry">
+      <p class="title">Family violence effects of social safety net incentives for child support cooperation</p>
+      <p class="authors">with Susan T. Parker and Lauren Schechter</p>
+    </article>
+
+    <article class="entry">
+      <p class="title">Distributional effects of HR1 implementation on Medicaid enrollment</p>
+      <p class="authors">with Jeremy Barofsky and Pamela Herd</p>
+    </article>
+
+    <h2 id="teaching">Teaching</h2>
+
+    <article class="entry">
+      <span class="meta">Fall 2026, University of Wisconsin–Madison</span>
+      <p class="title">Cost-Benefit Analysis (PA 881)</p>
+    </article>
+
+    <h2 id="other-writing">Other writing</h2>
+
+    <article class="entry">
+      <span class="meta">University of Michigan Poverty Solutions research brief, 2022</span>
+      <p class="title"><a href="https://sites.fordschool.umich.edu/poverty2021/files/2022/06/PovertySolutions-Cash-Transfers-PolicyBrief-r3.pdf">The COVID Cash Transfer Studies: Key Findings and Future Directions</a></p>
+      <p class="authors">with Brian Jacob, Natasha Pilkauskas, Elizabeth Rhodes, and H. Luke Shaefer</p>
+    </article>
+
+    <footer>Last updated August 2026</footer>
+  </main>
+
+</div>
+</body>
+</html>
